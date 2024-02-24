@@ -21,7 +21,7 @@ export default function ProjectsSection() {
         <motion.div id="project-1" className="flex flex-col md:flex-row items-center justify-between my-5" variants={subContainer}>
           <motion.div
             id="project-1-desc"
-            className="md:pr-5 md:w-1/2"
+            className="pb-5 md:pr-5 md:w-1/2"
             variants={subContainer}
           >
             <motion.div variants={child}>
@@ -45,27 +45,30 @@ export default function ProjectsSection() {
               </motion.div>
             </motion.div>
           </motion.div>
-          <a href="https://circles.csesoc.app/" className="w-1/2">
+          <a href="https://circles.csesoc.app/" className="md:w-1/2">
             <motion.img
               alt="UNSW Circles screenshot"
-              className="hidden md:block rounded-lg"
+              className="rounded-lg"
               src="/circles.jpg"
               variants={child}
             />
           </a>
         </motion.div>
         <motion.div id="project-2" className="flex flex-col md:flex-row items-center justify-between my-5" variants={subContainer}>
-          <a href="https://github.com/leonardo-fan/phone-number-scraper" className="w-1/2">
+          <a
+            href="https://github.com/leonardo-fan/phone-number-scraper"
+            className="pt-5 order-2 md:order-1 md:w-1/2"
+          >
             <motion.img
               alt="phone number scraper screenshot"
-              className="hidden md:block rounded-lg"
+              className="rounded-lg"
               src="/phone-number-scraper-demo.png"
               variants={child}
             />
           </a>
           <motion.div
             id="project-2-desc"
-            className="md:pl-5 md:w-1/2"
+            className="md:pl-5 order-1 md:order-2 md:w-1/2"
             variants={subContainer}
           >
             <motion.div variants={child}>
