@@ -53,7 +53,7 @@ export default function ProjectsSection() {
             />
           </a>
         </motion.div>
-        <motion.div id="project-2" className="flex flex-col md:flex-row items-center justify-between mt-10" variants={subContainer}>
+        <motion.div id="project-2" className="flex flex-col md:flex-row items-center justify-between mt-10 mb-16 sm:mb-0" variants={subContainer}>
           <a href="https://github.com/leonardo-fan/phone-number-scraper" className="w-1/2">
             <motion.img
               alt="phone number scraper screenshot"
