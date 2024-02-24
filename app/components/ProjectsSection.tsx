@@ -25,7 +25,7 @@ export default function ProjectsSection() {
           initial="hidden"
           whileInView="visible"
           variants={container}
-          viewport={{ once: true, amount: 0.8 }}
+          viewport={{ once: true, amount: 0.5 }}
           >
           <motion.div
             id="project-1-desc"
@@ -68,7 +68,7 @@ export default function ProjectsSection() {
           initial="hidden"
           whileInView="visible"
           variants={container}
-          viewport={{ once: true, amount: 0.8 }}
+          viewport={{ once: true, amount: 0.5 }}
         >
           <a
             href="https://github.com/leonardo-fan/phone-number-scraper"
