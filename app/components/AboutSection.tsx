@@ -82,12 +82,12 @@ export default function AboutSection() {
           <Title text="About Me" level={1} />
         </motion.span>
         <motion.div variants={child} >
-          Hi 👋, welcome to my portfolio! I&apos;m Leonardo Fan, a full-stack software engineer
+          Welcome to my portfolio! I&apos;m Leonardo Fan, a full-stack software engineer
           with experience in both business and technology roles across
           the software, banking, consulting, public sector and insurance industry.
           I have a passion for programming, solving problems and creating useful
-          solutions for people.
-          Please have a look through the rest of the site and feel free to reach out.
+          solutions.
+          Please have a look through the rest of the website and feel free to reach out.
           Thank you 🚀
         </motion.div>
         <motion.span variants={child} >
