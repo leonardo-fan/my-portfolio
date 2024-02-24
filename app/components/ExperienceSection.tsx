@@ -81,7 +81,7 @@ export default function ExperienceSection() {
       variants={container}
       viewport={{ once: true, amount: 0.5 }}
       id="experience"
-      className="flex flex-col items-center justify-center min-h-screen mb-16 w-full max-w-screen-xl border-b"
+      className="flex flex-col items-center justify-center min-h-screen w-full max-w-screen-xl border-b"
     >
       <motion.div className="flex items-center gap-2 w-full" variants={child}>
         <Title text="Experience" level={1} />

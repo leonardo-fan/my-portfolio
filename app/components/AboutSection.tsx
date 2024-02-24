@@ -71,7 +71,7 @@ const technologies : techData[] = [
 export default function AboutSection() {
   
   return (
-    <section id="about" className="flex items-center min-h-screen mb-16 w-full max-w-screen-xl border-b">
+    <section id="about" className="flex items-center pb-16 w-full max-w-screen-xl border-b">
       <motion.div
         initial="hidden"
         whileInView="visible"

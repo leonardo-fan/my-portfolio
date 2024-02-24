@@ -7,7 +7,7 @@ import { child, container, subContainer } from "./basicStaggerConfig";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="flex items-center min-h-screen mb-16 w-full max-w-screen-xl">
+    <section id="projects" className="flex items-center mb-16 w-full max-w-screen-xl">
       <motion.div 
         initial="hidden"
         whileInView="visible"
