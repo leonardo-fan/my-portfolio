@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Title from "./Text/Title"
 import { child, container, subContainer } from "./basicStaggerConfig";
+import Image from "next/image";
 
 type techData = {
   imgSrc: string,
@@ -82,7 +83,7 @@ export default function AboutSection() {
           <Title text="About Me" level={1} />
         </motion.span>
         <motion.div variants={child} >
-          Hi 👋, welcome to my portfolio! I'm Leonardo Fan, a full-stack software engineer
+          Hi 👋, welcome to my portfolio! I&apos;m Leonardo Fan, a full-stack software engineer
           with experience in both business and technology roles across
           the software, banking, consulting, public sector and insurance industry.
           I have a passion for programming, solving problems and creating useful
@@ -97,7 +98,7 @@ export default function AboutSection() {
           {technologies.map((tech) => {
             return (
               <motion.li key={tech.text} className="flex items-center gap-2 pb-2" variants={child} >
-                <img src={tech.imgSrc} className="h-6 sm:h-9" />
+                <img src={tech.imgSrc} className="h-6 sm:h-9" alt={tech.text}/>
                 {tech.text}
               </motion.li>
             );

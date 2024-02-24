@@ -22,7 +22,7 @@ export default function RandomAnimToChar({ endChar, className, delay, duration }
     setIsClient(true);
     const controls = animate(count, 9, { delay: delay, duration: duration });
     return controls.stop;
-  }, []);
+  }, [count, delay, duration]);
 
   return isClient ? (<motion.span className={className} >{displayChars}</motion.span>) : (<></>);
 }
