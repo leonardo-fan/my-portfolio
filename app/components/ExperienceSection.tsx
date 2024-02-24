@@ -1,97 +1,95 @@
 "use client"
 
-import { useState } from "react"
-import Title from "./Title"
+import { motion } from "framer-motion";
+import Title from "./Text/Title"
+import { child, container, subContainer } from "./basicStaggerConfig";
+
 
 type JobInfo = {
+  id: string,
   imageSrc: string,
   company: string,
   role: string,
-  startDate: string,
-  endDate: string,
+  team: string,
   desc: string,
 }
 
 const jobInformation : JobInfo[] = [
   {
+    id: "jd-1",
     imageSrc: "/dolby_icon.png",
     company: "Dolby Laboratories",
-    role: "Software Engineering Intern - Streaming Team",
-    startDate: "JAN23",
-    endDate: "APR23",
+    role: "Software Engineer",
+    team: "Streaming Team",
     desc: "Led an internal project to help integrate a newly acquired team into the business, extending the functionality of a global back-office Command Line Interface tool. Gathered requirements and feedback by discussing with users and coded with Python. Planned, implemented, tested, and deployed a new Keycloak authenticated API server end-to-end using C# and .NET for administrative staff to query internal databases."
   }, 
   {
+    id: "jd-2",
     imageSrc: "/boqs_icon.png",
     company: "Bank of Queensland Specialist",
-    role: "Technical Business Analyst Intern - Operational Excellence Team",
-    startDate: "JUL21",
-    endDate: "DEC21",
+    role: "Technical Business Analyst",
+    team: "Operational Excellence Team",
     desc: "Led a system project, iterating on 20+ requirements with stakeholders, developing backend SQL logic and managing changes with the approval board to meet new regulations for 10+ products. Established a new tool covering 70+ workflows to reduce user pain points from obscure messages in the Loan Operations system. This was distributed to and is now being used by the wider team. Automated frontend testing, creating 30+ cases by inspecting HTML and using Tricentis Tosca. Taught multiple non-technical team members and other new interns about making backend and frontend system changes."
   }, 
   {
+    id: "jd-3",
     imageSrc: "/pwc_icon.png",
     company: "PwC Australia",
-    role: "Technology Consultant Intern - Microsoft & Customer Experience Team",
-    startDate: "JAN21",
-    endDate: "JUL21",
+    role: "Technology Consultant",
+    team: "Microsoft & Customer Experience Team",
     desc: "Overhauled a government department's legacy database to Dynamics 365, using SQL and Server Integration Services in a team of 2 to perform a data migration, finishing 2 weeks ahead of schedule. Collaborated on a $3.5 million digital transformation project by creating a User Acceptance Testing plan as well as working with technical teams and the client to resolve bugs using Azure DevOps. Assisted a $350k analysis project for a government agency by understanding business and technical needs through 16 interviews, 3 ideation/review workshops and requirements design."
   }, 
   {
+    id: "jd-4",
     imageSrc: "/qbe_icon.png",
     company: "QBE Insurance",
-    role: "Business Analyst Intern - Business Optimisation Team",
-    startDate: "FEB20",
-    endDate: "JUL20",
+    role: "Business Analyst",
+    team: "Business Optimisation Team",
     desc: "Facilitated a nationally recognised claims digitisation project by building user requirements with the technical team, running weekly workshops, assessing 7 current tools and modelling business processes. Managed the gap analysis of 48 data flow diagrams by planning work and onboarding new joiners. Evaluated the performance of robotic process automation by creating a dashboard and presenting the bots with the most time savings."
   }, 
 ]
 
-export default function ExperienceSection() {
-  const [index, setIndex] = useState(0);
-  const [info, setInfo] = useState(jobInformation[0]);
-
-  const forwardInTime = () => {
-    if (index === 0) return;
-    let forwardIndex = index - 1;
-    setIndex(forwardIndex);
-    setInfo(jobInformation[forwardIndex]);
-  };
-
-  const backInTime = () => {
-    if (index === jobInformation.length - 1) return;
-    let backIndex = index + 1;
-    setIndex(backIndex);
-    setInfo(jobInformation[backIndex]);
-  };
-
+function JobDesc({ info }: { info: JobInfo }) {
   return (
-    <section id="experience" className="flex flex-col items-center justify-between h-screen">
-      <div className="flex items-center w-full mt-14">
+    <motion.div
+      key={info["id"]}
+      className="snap-start flex flex-col justify-center md:flex-row md:items-center min-h-full p-3"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+      variants={child}
+    >
+      <div key={`${info["id"]}-left`} className="flex flex-col items-center justify-center text-center md:w-1/3 px-1">
+        <img key={`${info["id"]}-logo`} src={info["imageSrc"]} className="h-1/2" alt="Company Image" />
+        <Title key={`${info["id"]}-role`} text={info["role"]} level={4} />
+      </div>
+      <div key={`${info["id"]}-right`} className="px-10 hidden md:block sm:w-fit md:w-2/3">
+        <Title key={`${info["id"]}-company`} text={info["company"]} level={2} />
+        <Title key={`${info["id"]}-team`} text={info["team"]} level={3} />
+        {info["desc"]}
+      </div>
+    </motion.div>
+  );
+}
+
+export default function ExperienceSection() {
+  return (
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      variants={container}
+      viewport={{ once: true, amount: 0.5 }}
+      id="experience"
+      className="flex flex-col items-center justify-center min-h-screen mb-16 w-full max-w-screen-xl border-b"
+    >
+      <motion.div className="flex items-center w-full" variants={child}>
         <Title text="Experience" level={1} />
-      </div>
-      <div className="flex flex-col md:flex-row items-center">
-        <div className="flex flex-col items-center justify-center sm:w-fit md:w-2/5 px-1 mx-1">
-          <img src={info["imageSrc"]} className="h-1/2" alt="Company Image" />
-          <Title text={`${info["startDate"]} - ${info["endDate"]}`} level={3} />
-        </div>
-        <div className="px-1 sm:w-fit md:w-3/5">
-          <Title text={info["company"]} level={2} />
-          <Title text={info["role"]} level={3} />
-          {info["desc"]}
-        </div>
-      </div>
-      <div className="flex flex-col items-center w-full mb-14">
-        <div className="flex items-center px-1 mx-1">
-          {/* greyed out if no more */}
-          <button onClick={backInTime} className="border border-white rounded-full hover:bg-white hover:text-black font-medium text-sm px-4 lg:px-5 py-1 lg:py-1.5 my-1 lg:my-1.5 mx-1">
-            {"<"}
-          </button>
-          <button onClick={forwardInTime} className="border border-white rounded-full hover:bg-white hover:text-black font-medium text-sm px-4 lg:px-5 py-1 lg:py-1.5 my-1 lg:my-1.5 mx-1">
-            {">"}
-          </button>
-        </div>
-      </div>
-    </section>
+      </motion.div>
+      <motion.div className="snap-mandatory snap-y overflow-y-scroll h-3/5 border rounded-xl" variants={subContainer}>
+        {jobInformation.map((desc) => (
+          <JobDesc key={desc.id} info={desc} />
+        ))}
+      </motion.div>
+    </motion.section>
   )
 }
