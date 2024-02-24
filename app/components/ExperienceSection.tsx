@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import Title from "./Text/Title"
-import { child, container, subContainer } from "./basicStaggerConfig";
-import DownArrow from "./More/DownArrow";
+import { child, container } from "./basicStaggerConfig";
 
 
 type JobInfo = {
@@ -54,21 +53,22 @@ function JobDesc({ info }: { info: JobInfo }) {
   return (
     <motion.div
       key={info["id"]}
-      className="snap-start flex flex-col justify-center md:flex-row md:items-center min-h-full p-3"
+      className="pt-5 flex flex-col"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.5 }}
-      variants={child}
+      variants={container}
+      viewport={{ once: true }}
     >
-      <div key={`${info["id"]}-left`} className="flex flex-col items-center justify-center text-center md:w-1/3 px-1">
-        <img key={`${info["id"]}-logo`} src={info["imageSrc"]} className="h-1/2" alt="Company Image" />
-        <Title key={`${info["id"]}-role`} text={info["role"]} level={4} />
-      </div>
-      <div key={`${info["id"]}-right`} className="px-10 hidden md:block sm:w-fit md:w-2/3">
+      <motion.div className="flex items-center gap-4" variants={child}>
+        <img key={`${info["id"]}-logo`} src={info["imageSrc"]} className="h-9" alt="Company" />
         <Title key={`${info["id"]}-company`} text={info["company"]} level={2} />
-        <Title key={`${info["id"]}-team`} text={info["team"]} level={3} />
+      </motion.div>
+      <motion.div variants={child}>
+        <Title key={`${info["id"]}-role`} text={`${info["role"]} | ${info["team"]}`} level={3} />
+      </motion.div>
+      <motion.span variants={child}>
         {info["desc"]}
-      </div>
+      </motion.span>
     </motion.div>
   );
 }
@@ -76,21 +76,21 @@ function JobDesc({ info }: { info: JobInfo }) {
 export default function ExperienceSection() {
   return (
     <motion.section
-      initial="hidden"
-      whileInView="visible"
-      variants={container}
-      viewport={{ once: true, amount: 0.5 }}
       id="experience"
-      className="flex flex-col items-center justify-center min-h-screen w-full max-w-screen-xl border-b"
+      className="flex flex-col items-center justify-center w-full max-w-screen-xl border-b mt-16 pb-16"
     >
-      <motion.div className="flex items-center gap-2 w-full" variants={child}>
+      <motion.div
+        className="flex items-center gap-2 w-full" 
+        initial="hidden"
+        whileInView="visible"
+        variants={container}
+        viewport={{ once: true }}
+      >
         <Title text="Experience" level={1} />
       </motion.div>
-      <motion.div className="snap-mandatory snap-y overflow-y-scroll h-3/5 border rounded-xl mb-1" variants={subContainer}>
-        {jobInformation.map((desc) => (
-          <JobDesc key={desc.id} info={desc} />
-        ))}
-      </motion.div>
+      {jobInformation.map((desc) => (
+        <JobDesc key={desc.id} info={desc} />
+      ))}
     </motion.section>
   )
 }
