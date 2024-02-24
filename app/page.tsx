@@ -5,7 +5,7 @@ import ProjectsSection from "./components/ProjectsSection"
 
 export default function Home() {
   return (
-    <div className="fixed flex flex-col items-center px-4 lg:px-6 mx-auto w-screen h-screen overflow-y-scroll">
+    <div className="fixed flex flex-col items-center px-4 lg:px-6 mx-auto w-screen h-[100dvh] overflow-y-scroll">
       <HeroSection />
       <AboutSection />
       <ExperienceSection />

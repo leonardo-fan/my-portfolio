@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Title from "./Text/Title"
 import { child, container, subContainer } from "./basicStaggerConfig";
-import Image from "next/image";
 
 type techData = {
   imgSrc: string,
