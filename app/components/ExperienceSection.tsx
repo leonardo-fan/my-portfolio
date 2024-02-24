@@ -91,10 +91,6 @@ export default function ExperienceSection() {
           <JobDesc key={desc.id} info={desc} />
         ))}
       </motion.div>
-      <motion.a href="/#projects" variants={child} className="flex gap-2">
-        <DownArrow/>
-        Scroll/click here for more
-      </motion.a>
     </motion.section>
   )
 }

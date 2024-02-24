@@ -13,11 +13,12 @@ export default function ProjectsSection() {
         whileInView="visible"
         variants={container}
         viewport={{ once: true, amount: 0.5 }}
+        className="py-16"
       >
         <motion.div variants={child} >
           <Title text="Projects" level={1} />
         </motion.div>
-        <motion.div id="project-1" className="flex flex-col md:flex-row items-center justify-between" variants={subContainer}>
+        <motion.div id="project-1" className="flex flex-col md:flex-row items-center justify-between my-5" variants={subContainer}>
           <motion.div
             id="project-1-desc"
             className="md:pr-5 md:w-1/2"
@@ -53,7 +54,7 @@ export default function ProjectsSection() {
             />
           </a>
         </motion.div>
-        <motion.div id="project-2" className="flex flex-col md:flex-row items-center justify-between mt-10 mb-16 sm:mb-0" variants={subContainer}>
+        <motion.div id="project-2" className="flex flex-col md:flex-row items-center justify-between my-5" variants={subContainer}>
           <a href="https://github.com/leonardo-fan/phone-number-scraper" className="w-1/2">
             <motion.img
               alt="phone number scraper screenshot"
