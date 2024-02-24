@@ -77,11 +77,11 @@ export default function HeroSection() {
               duration: 0.5,
             }}
             onAnimationComplete={() => { setBlinkShown(false); }}
-            className="font-bold text-6xl md:text-8xl"
+            className="font-bold text-6xl md:text-7xl"
           >
             |
           </motion.span>}
-          <ShowByCharacterText delay={TITLE_SEQ_STAG} variants={child} charAniTime={(TITLE_SEQ_DUR / 11)} className="font-bold text-7xl md:text-8xl" text="Leonardo Fan" />
+          <ShowByCharacterText delay={TITLE_SEQ_STAG} variants={child} charAniTime={(TITLE_SEQ_DUR / 11)} className="font-bold text-6xl md:text-7xl" text="Leonardo Fan" />
           <ShowByCharacterText delay={TITLE_SEQ_STAG * 2} variants={child} charAniTime={(TITLE_SEQ_DUR / 16)} className="text-5xl md:text-6xl" text="Software Engineer" />
         </motion.div>
         <motion.div
