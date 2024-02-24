@@ -57,7 +57,7 @@ function JobDesc({ info }: { info: JobInfo }) {
       initial="hidden"
       whileInView="visible"
       variants={container}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 1 }}
     >
       <motion.div className="flex items-center gap-4" variants={child}>
         <img key={`${info["id"]}-logo`} src={info["imageSrc"]} className="h-9" alt="Company" />

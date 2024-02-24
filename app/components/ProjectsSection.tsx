@@ -9,16 +9,24 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="flex items-center mb-16 w-full max-w-screen-xl">
       <motion.div 
-        initial="hidden"
-        whileInView="visible"
-        variants={container}
-        viewport={{ once: true, amount: 0.5 }}
         className="py-16"
       >
-        <motion.div variants={child} >
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={container}
+          viewport={{ once: true, amount: 1 }}
+        >
           <Title text="Projects" level={1} />
         </motion.div>
-        <motion.div id="project-1" className="flex flex-col md:flex-row items-center justify-between my-5" variants={subContainer}>
+        <motion.div
+          id="project-1"
+          className="flex flex-col md:flex-row items-center justify-between my-5"
+          initial="hidden"
+          whileInView="visible"
+          variants={container}
+          viewport={{ once: true, amount: 0.8 }}
+          >
           <motion.div
             id="project-1-desc"
             className="pb-5 md:pr-5 md:w-1/2"
@@ -54,7 +62,14 @@ export default function ProjectsSection() {
             />
           </a>
         </motion.div>
-        <motion.div id="project-2" className="flex flex-col md:flex-row items-center justify-between my-5" variants={subContainer}>
+        <motion.div
+          id="project-2"
+          className="flex flex-col md:flex-row items-center justify-between my-5"
+          initial="hidden"
+          whileInView="visible"
+          variants={container}
+          viewport={{ once: true, amount: 0.8 }}
+        >
           <a
             href="https://github.com/leonardo-fan/phone-number-scraper"
             className="pt-5 order-2 md:order-1 md:w-1/2"
