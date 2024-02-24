@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Title from "./Text/Title"
 import { child, container, subContainer } from "./basicStaggerConfig";
+import DownArrow from "./More/DownArrow";
 
 
 type JobInfo = {
@@ -82,14 +83,18 @@ export default function ExperienceSection() {
       id="experience"
       className="flex flex-col items-center justify-center min-h-screen mb-16 w-full max-w-screen-xl border-b"
     >
-      <motion.div className="flex items-center w-full" variants={child}>
+      <motion.div className="flex items-center gap-2 w-full" variants={child}>
         <Title text="Experience" level={1} />
       </motion.div>
-      <motion.div className="snap-mandatory snap-y overflow-y-scroll h-3/5 border rounded-xl" variants={subContainer}>
+      <motion.div className="snap-mandatory snap-y overflow-y-scroll h-3/5 border rounded-xl mb-1" variants={subContainer}>
         {jobInformation.map((desc) => (
           <JobDesc key={desc.id} info={desc} />
         ))}
       </motion.div>
+      <motion.a href="/#projects" variants={child} className="flex gap-2">
+        <DownArrow/>
+        Scroll/click here for more
+      </motion.a>
     </motion.section>
   )
 }
