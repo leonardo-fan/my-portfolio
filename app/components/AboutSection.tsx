@@ -9,6 +9,7 @@ type techData = {
   text: string
 };
 
+// https://github.com/tandpfun/skill-icons
 const technologies : techData[] = [
   {
     imgSrc: "skills_icons/java.svg",
@@ -35,7 +36,7 @@ const technologies : techData[] = [
     text: "C",
   },
   {
-    imgSrc: "skills_icons/mysql-sqlite.svg",
+    imgSrc: "skills_icons/postgres.svg",
     text: "SQL",
   },
   {
@@ -43,8 +44,8 @@ const technologies : techData[] = [
     text: "HTML/CSS",
   },
   {
-    imgSrc: "skills_icons/react.svg",
-    text: "React",
+    imgSrc: "skills_icons/angular-react.svg",
+    text: "React/Angular",
   },
   {
     imgSrc: "skills_icons/dotnet.svg",
@@ -55,8 +56,8 @@ const technologies : techData[] = [
     text: "MongoDB",
   },
   {
-    imgSrc: "skills_icons/azure.svg",
-    text: "Microsoft Azure",
+    imgSrc: "skills_icons/aws.svg",
+    text: "Amazon Web Services",
   },
   {
     imgSrc: "skills_icons/git.svg",

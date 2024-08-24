@@ -23,7 +23,6 @@ export default function Footer() {
     >
       <div className="flex flex-row-reverse items-center mx-auto max-w-screen-xl h-full">
         <div className="flex items-center">
-          <NavIconEl text="+61 450 588 818" imgSrc="footer_icons/phone.svg" link="tel:+61450588818" />
           <NavIconEl text="leonardofan2000@gmail.com" imgSrc="footer_icons/gmail.svg" link="mailto:leonardofan2000@gmail.com" />
           <NavIconEl text="LinkedIn" imgSrc="footer_icons/linkedin.svg" link="https://www.linkedin.com/in/leonardofan/" />
           <NavIconEl text="GitHub" imgSrc="footer_icons/github.svg" link="https://github.com/leonardo-fan" />
